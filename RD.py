@@ -23,7 +23,7 @@ def laplacian(Z): #[laplaciano def (Z):]
     Zbottom = Z[2:,1:-1] #[Zbottom = Z [2: 1: -1]]
     Zright = Z[1:-1,2:] #[Zright = Z [1: 1,2:]]
     Zcenter = Z[1:-1,1:-1]# [Zcenter = Z [1: 1,1: -1]]
-    return (Ztop + Zleft + Zbottom + Zright - 4 * Zcenter) / dx**2 [volver (ZTOP + Zleft + Zbottom + Zright - 4 * Zcenter) / dx ** 2]
+    return (Ztop + Zleft + Zbottom + Zright - 4 * Zcenter) / dx**2# [(ZTOP + Zleft + Zbottom + Zright - 4 * Zcenter) / dx ** 2]
 
 
     # We simulate the PDE with the finite difference method.
@@ -42,9 +42,6 @@ for i in range(n):
     # are null.
     for Z in (U, V):
         Z[0,:] = Z[1,:]
-        Z[-1,:] = Z[-2,:]
-        Z[:,0] = Z[:,1]
-        Z[:,-1] = Z[:,-2]
-
+        Z[-1,:] = Z[-2,:] #F
 plt.imshow(U, cmap=plt.cm.copper, extent=[-1,1,-1,1]);# [plt.imshow (U, cmap = plt.cm.copper, medida = [- 1,1, -1,1]);]
 plt.xticks([]); plt.yticks([]); #[plt.xticks ([]); plt.yticks ([]);]
