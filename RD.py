@@ -46,5 +46,5 @@ for i in range(n):
         Z[:,0] = Z[:,1]
         Z[:,-1] = Z[:,-2]
 
-#plt.imshow(U, cmap=plt.cm.copper, extent=[-1,1,-1,1]); [plt.imshow (U, cmap = plt.cm.copper, medida = [- 1,1, -1,1]);]
+plt.imshow(U, cmap=plt.cm.copper, extent=[-1,1,-1,1]); [plt.imshow (U, cmap = plt.cm.copper, medida = [- 1,1, -1,1]);]
 plt.xticks([]); plt.yticks([]); [plt.xticks ([]); plt.yticks ([]);]
