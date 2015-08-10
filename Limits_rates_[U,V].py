@@ -1,9 +1,9 @@
 #F(u,v,w)  Limits of pruduction susbstances U, V, W
 import numpy as np
-import matplotlib.pyplot as plt
+
 #%matplotlib inline
 #los valores para definir los limites de la funcion de f [U,V] son tomados
-# de la literatura, esto a asegura que las concentraciones no tomen valores realistas en la posicion actual.
+# de la literatura, esto a asegura que las concentraciones  tomen valores realistas en la posicion actual.
 
 def ratesU (UC,c1v,c2w,c3):    # UC = [U] inicial
     if c1v+c2w+c3 < 0:
