@@ -1,6 +1,7 @@
+
 import numpy as np
 import matplotlib.pyplot as plt
-#matplotlib inline
+#%matplotlib inline
 
 
 a = 2.8e-4
@@ -43,5 +44,7 @@ for i in range(n):
     for Z in (U, V):
         Z[0,:] = Z[1,:]
         Z[-1,:] = Z[-2,:] #F
+	Z[:,0] = Z[:,1]
+        Z[:,-1]= Z[:,-2]
 plt.imshow(U, cmap=plt.cm.copper, extent=[-1,1,-1,1]);# [plt.imshow (U, cmap = plt.cm.copper, medida = [- 1,1, -1,1]);]
 plt.xticks([]); plt.yticks([]); #[plt.xticks ([]); plt.yticks ([]);]
