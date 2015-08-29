@@ -48,6 +48,22 @@ def reajuste(x):
             pixel[...]=pixel
     return x
 
+#This board possesses a 0 border that allows to accelerate things a bit by avoiding to have specific tests for 
+#borders when counting the number of neighbours. First step is to count neighbours:
+
+def compute_neigbours(image_final):
+    image_final.astype(int)
+    shape = len(image_final), len(image_final[0])
+    N  = [[0,]*(shape[0])  for i in range(shape[1])]
+    for x in range(1,shape[0]-1):
+        for y in range(1,shape[1]-1):
+            N[x][y] = image_final[x][y-1] \
+                    + image_final[x-1][y]            +image_final[x+1][y]   \
+                    + image_final[x][y+1]
+            
+                 
+    return N
+
 
 # Determinación de la concentración de ms (sustancia producida por los melanoforos)
 
@@ -77,10 +93,9 @@ def delta_xs (image_final):
                         + (dxs * (N[r][s] - (4* image_final[r][s]))))
             else:
                 xs[r][s]=xs[r][s]
-                
-            
-            
     return xs
+
+# 
 # Cambie por la imagen a procesar
 danio= cv2.imread('//home/user/MEGAsync/proyectos/AutoDanio/images/prueba1.JPG')
 
