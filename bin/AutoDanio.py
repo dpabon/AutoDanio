@@ -43,21 +43,20 @@ def reajuste(x):
         else:
             pixel[...]=pixel
         if pixel<0.7:
-            pixel[...]=random.randrange(0.1,0.3,0.1)
+            pixel[...]=random.uniform(0.1,0.4)
         else:
             pixel[...]=pixel
     return x
 
 
 # Determinación de la concentración de ms (sustancia producida por los melanoforos)
-# Esta función halla la concentración de la sustancia ms, la cual es producida por los melanoforos y actua sobre los xantoforos. Falta definir los limites para que actue sobre los pixeles donde halla melanoforos
 
 def delta_ms (image_final):
     shape = len(image_final), len(image_final[0])
     ms  = [[0,]*(shape[0])  for i in range(shape[1])]
     for r in range(1,shape[0]-1):
         for s in range(1,shape[1]-1):
-            if ms[r][s]<0.8:
+            if ms[r][s]<0.4:
                 ms[r][s] = (((cmsp * image_final[r][s]) - (cmsd * image_final[r][s])) \
                         + (dms * (N[r][s] - (4* image_final[r][s]))))
             else:
