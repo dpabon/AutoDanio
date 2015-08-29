@@ -50,17 +50,16 @@ def reajuste(x):
 
 
 ## Parametros iniciales propuestos por Nakamasu et al.2009
-cmsp = 2
-cmsd = 0.2
-dms = 0.015
-cxs = 2
-cxsp = 1
-cxsd = 0.2
-dxs = 0.015
-cxlp = 2.8
-cxld = 0.2
-dxl = 0.3
-c1 = 1.5
+cmsp = 2      # Tasa de producción de Ms
+cmsd = 0.2    # Tasa de decaimiento de Ms
+dms = 0.015   # Tasa de difusion de Ms
+cxsp = 2      # Tasa de producción de Xs
+cxsd = 0.2    # Tasa de decaimiento de Xs
+dxs = 0.015   # Tasa de difusion de Xs
+cxlp = 2.8    # Tasa de producción de Xl
+cxld = 0.2    # Tasa de decaimiento de Xl
+dxl = 0.3     # Tasa de difusion de Xl
+c1 = 1.5      
 c2= 15
 c3= 11
 c4 = 1.5
@@ -111,7 +110,7 @@ def delta_ms (image_final):
 
 
 #Cambio en la producción de la sustancia XS, producida por xantoforos
-#tener en cuenta la tasa de produccion de xs , cxsp, no està en el paper
+
 def delta_xs (image_final):
     shape = len(image_final), len(image_final[0])
     xs  = [[0,]*(shape[0])  for i in range(shape[1])]
