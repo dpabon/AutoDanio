@@ -13,6 +13,7 @@ from scipy import ndimage
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2
+import random
 %matplotlib inline
 
 ################################################################ 
@@ -42,7 +43,7 @@ def reajuste(x):
         else:
             pixel[...]=pixel
         if pixel<0.7:
-            pixel[...]=0
+            pixel[...]=random.randrange(0.1,0.3,0.1)
         else:
             pixel[...]=pixel
     return x
