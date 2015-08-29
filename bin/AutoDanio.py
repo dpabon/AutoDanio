@@ -48,6 +48,35 @@ def reajuste(x):
             pixel[...]=pixel
     return x
 
+
+## Parametros iniciales propuestos por Nakamasu et al.2009
+cmsp = 2
+cmsd = 0.2
+dms = 0.015
+cxs = 2
+cxsp = 1
+cxsd = 0.2
+dxs = 0.015
+cxlp = 2.8
+cxld = 0.2
+dxl = 0.3
+c1 = 1.5
+c2= 15
+c3= 11
+c4 = 1.5
+cmdths = 3
+cxdths = 2.2
+cmdthl = 3.0
+cmapps = 1
+cxapps = 1
+cmappl = 0.6
+pmapp = 0.005
+pxapp = 0.2
+pmdth = 0.8
+pxdth = 0.8
+cmdthl = 5
+
+
 #This board possesses a 0 border that allows to accelerate things a bit by avoiding to have specific tests for 
 #borders when counting the number of neighbours. First step is to count neighbours:
 
