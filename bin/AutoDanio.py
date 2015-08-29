@@ -56,7 +56,7 @@ def delta_ms (image_final):
     ms  = [[0,]*(shape[0])  for i in range(shape[1])]
     for r in range(1,shape[0]-1):
         for s in range(1,shape[1]-1):
-            if ms[r][s]<0.4:
+            if ms[r][s]<0.2:
                 ms[r][s] = (((cmsp * image_final[r][s]) - (cmsd * image_final[r][s])) \
                         + (dms * (N[r][s] - (4* image_final[r][s]))))
             else:
@@ -64,6 +64,23 @@ def delta_ms (image_final):
             
     return ms
 
+
+#Cambio en la producción de la sustancia XS, producida por xantoforos
+#tener en cuenta la tasa de produccion de xs , cxsp, no està en el paper
+def delta_xs (image_final):
+    shape = len(image_final), len(image_final[0])
+    xs  = [[0,]*(shape[0])  for i in range(shape[1])]
+    for r in range(1,shape[0]-1):
+        for s in range(1,shape[1]-1):
+            if 0.4>xs[r][s]>0.2:
+                xs[r][s] = (((cxsp * image_final[r][s]) - (cxsd * image_final[r][s])) \
+                        + (dxs * (N[r][s] - (4* image_final[r][s]))))
+            else:
+                xs[r][s]=xs[r][s]
+                
+            
+            
+    return xs
 # Cambie por la imagen a procesar
 danio= cv2.imread('//home/user/MEGAsync/proyectos/AutoDanio/images/prueba1.JPG')
 
