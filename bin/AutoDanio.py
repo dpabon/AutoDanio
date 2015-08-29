@@ -14,7 +14,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 import random
-%matplotlib inline
+#%matplotlib inline
 
 ################################################################ 
 #                 Definición de funciones                      #
@@ -95,7 +95,35 @@ def delta_xs (image_final):
                 xs[r][s]=xs[r][s]
     return xs
 
-# 
+#cambio de produccion de la sustancia xl, producida por xantoforos
+def delta_xl (image_final):
+    shape = len(image_final), len(image_final[0])
+    xl  = [[0,]*(shape[0])  for i in range(shape[1])]
+    for r in range(1,shape[0]-1):
+        for s in range(1,shape[1]-1):
+            if 0.4>xl[r][s]>0.2:
+                xl[r][s] = (((cxlp * image_final[r][s]) - (cxld * image_final[r][s])) \
+                        + (dxl * (N[r][s] - (4* image_final[r][s]))))
+    return xl
+
+#Comportamiento celular de rango corto para los melanoforos
+def mshort (image_final):
+    shape = len(image_final), len(image_final[0])
+    mshort  = [[0,]*(shape[0])  for i in range(shape[1])]
+    for r in range(1,shape[0]-1):
+        for s in range(1,shape[1]-1):
+            mshort[r][s] = ((c1 * ms[r][s])+ (c2 * xs[r][s]))
+    return mshort
+
+#Comportamiento celular de rango corto para los xantoforos
+def xshort (image_final):
+    shape = len(image_final), len(image_final[0])
+    xshort  = [[0,]*(shape[0])  for i in range(shape[1])]
+    for r in range(1,shape[0]-1):
+        for s in range(1,shape[1]-1):
+            xshort[r][s] = ((c3 * ms[r][s])+ (c4 * xs[r][s]))
+    return xshort
+
 # Cambie por la imagen a procesar
 danio= cv2.imread('//home/user/MEGAsync/proyectos/AutoDanio/images/prueba1.JPG')
 
