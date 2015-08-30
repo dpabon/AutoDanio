@@ -92,10 +92,10 @@ def compute_neigbours(image_final):
                  
     return N
 
-
 # Determinación de la concentración de ms (sustancia producida por los melanoforos)
 
 def delta_ms (image_final):
+    N=compute_neigbours(image_final)
     shape = len(image_final), len(image_final[0])
     ms  = [[0,]*(shape[0])  for i in range(shape[1])]
     for r in range(1,shape[0]-1):
@@ -112,8 +112,9 @@ def delta_ms (image_final):
 #Cambio en la producción de la sustancia XS, producida por xantoforos
 
 def delta_xs (image_final):
+    N=compute_neigbours(image_final)
     shape = len(image_final), len(image_final[0])
-    xs  = [[0,]*(shape[0])  for i in range(shape[1])]
+    xs  = [[0,]*(shape[0])  for i in range(shape[1])]    
     for r in range(1,shape[0]-1):
         for s in range(1,shape[1]-1):
             if 0.4>xs[r][s]>0.2:
@@ -125,6 +126,7 @@ def delta_xs (image_final):
 
 #cambio de produccion de la sustancia xl, producida por xantoforos
 def delta_xl (image_final):
+    N=compute_neigbours(image_final)
     shape = len(image_final), len(image_final[0])
     xl  = [[0,]*(shape[0])  for i in range(shape[1])]
     for r in range(1,shape[0]-1):
@@ -136,8 +138,11 @@ def delta_xl (image_final):
 
 #Comportamiento celular de rango corto para los melanoforos
 def mshort (image_final):
+    xs= delta_xs (image_final)
+    ms= delta_ms (image_final)
     shape = len(image_final), len(image_final[0])
     mshort  = [[0,]*(shape[0])  for i in range(shape[1])]
+    
     for r in range(1,shape[0]-1):
         for s in range(1,shape[1]-1):
             mshort[r][s] = ((c1 * ms[r][s])+ (c2 * xs[r][s]))
@@ -145,6 +150,8 @@ def mshort (image_final):
 
 #Comportamiento celular de rango corto para los xantoforos
 def xshort (image_final):
+    xs= delta_xs (image_final)
+    ms= delta_ms (image_final)
     shape = len(image_final), len(image_final[0])
     xshort  = [[0,]*(shape[0])  for i in range(shape[1])]
     for r in range(1,shape[0]-1):
