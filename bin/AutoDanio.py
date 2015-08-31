@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 """
 Created on Sat Aug 29 11:30:30 2015
@@ -14,7 +15,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 import random
-#%matplotlib inline
+import sys
+import os
+import time
+
 
 ################################################################ 
 #                 Definición de funciones                      #
@@ -159,6 +163,47 @@ def xshort (image_final):
             xshort[r][s] = ((c3 * ms[r][s])+ (c4 * xs[r][s]))
     return xshort
 
-# Cambie por la imagen a procesar
-danio= cv2.imread('//home/user/MEGAsync/proyectos/AutoDanio/images/prueba1.JPG')
+###############################################################################
+##                           Bienvenida                                      ##
+###############################################################################
 
+Titulo="""                _        _____              _       
+     /\        | |      |  __ \            (_)      
+    /  \  _   _| |_ ___ | |  | | __ _ _ __  _  ___  
+   / /\ \| | | | __/ _ \| |  | |/ _` | '_ \| |/ _ \ 
+  / ____ \ |_| | || (_) | |__| | (_| | | | | | (_) |
+ /_/    \_\__,_|\__\___/|_____/ \__,_|_| |_|_|\___/ 
+                                                    """                                    
+Autores="Creado por: Juan Seco y Daniel Pabon"
+web="https://github.com/jjseco/AutoDanio"
+Subtitulo1="""Bienvenido a AutoDanio""" 
+Subtitulo2="""Automata celular para crear patrones de coloración de pez cebra"""
+Subtitulo3="""Por favor presione "s" para continuar o "n" para salir"""
+print Titulo.center(50, "*")
+print Autores.center(50, "*")
+print web.center(50, "*")
+print " "
+print Subtitulo1.center(50, "*")
+print Subtitulo2.center(50, "*")
+print (" ")
+print Subtitulo3.center(50, "*")
+Primer_entrada=raw_input()
+if Primer_entrada=="n":
+    print ("Que tenga un buen dia")
+    sys.exit(0)
+else:
+    print ("Para continuar necesita una imagen de la banda lateral de pez cebra digite el nombre de la imagen con su respectivo directorio")
+    pass
+# Cambie por la imagen a procesar
+directorio=raw_input()
+danio= cv2.imread(directorio)
+print "La imagen actual es:"
+cv2.imshow('image',danio)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+time.sleep(5.0)
+print " "
+print "Para continuar procesaremos la imagen a escala de grises, Cierre la ventana de la imagen"
+grises=raw_input()
+
+print "Todo bien"
