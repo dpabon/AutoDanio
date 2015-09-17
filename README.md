@@ -11,6 +11,8 @@ Programa creado con el fin de modelar el patrón de coloración de _Danio_ _reri
 
 
 ### Cita  ###
-Por favor si usted utiliza este programa citelo como sigue
-1.Seco, J, P., D. AutoDanio. (2015). at <https://github.com/jjseco/AutoDanio>
+Por favor si usted utiliza este programa citelo como sigue:
+
+Seco, J. & Pabon, D. AutoDanio. (2015). at <https://github.com/jjseco/AutoDanio>
+
 
