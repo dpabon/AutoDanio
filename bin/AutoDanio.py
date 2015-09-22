@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Aug 29 11:30:30 2015
-
 @author: user
 """
 
@@ -174,10 +173,10 @@ Titulo="""                _        _____              _
   / ____ \ |_| | || (_) | |__| | (_| | | | | | (_) |
  /_/    \_\__,_|\__\___/|_____/ \__,_|_| |_|_|\___/ 
                                                     """                                    
-Autores="Creado por: Juan Seco y Daniel Pabon"
+Autores="Creado por: Juan Seco y Daniel Pabón"
 web="https://github.com/jjseco/AutoDanio"
 Subtitulo1="""Bienvenido a AutoDanio""" 
-Subtitulo2="""Automata celular para crear patrones de coloración de pez cebra"""
+Subtitulo2="""Autómata celular para crear patrones de coloración de pez cebra"""
 Subtitulo3="""Por favor presione "s" para continuar o "n" para salir"""
 print Titulo.center(50, "*")
 print Autores.center(50, "*")
