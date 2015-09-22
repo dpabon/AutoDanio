@@ -1,3 +1,8 @@
+![AutoDanio] (/logo.png)
+Format: ![Alt Text](url)
+
+
+
 ## AutoDanio##
 
 Programa creado con el fin de modelar el patrón de coloración de _Danio_ _rerio_ en varias etapas de desarrollo.
@@ -14,5 +19,3 @@ Programa creado con el fin de modelar el patrón de coloración de _Danio_ _reri
 Por favor si usted utiliza este programa citelo como sigue:
 
 Seco, J., Ñañez, N. & Pabon, D. AutoDanio. (2015). at <https://github.com/jjseco/AutoDanio>
-
-
