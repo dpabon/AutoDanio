@@ -1,5 +1,4 @@
 ![AutoDanio] (/logo.png)
-Format: ![Alt Text](url)
 
 
 
