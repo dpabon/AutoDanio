@@ -17,4 +17,4 @@ AutoDanio parte de una imagen de la parte lateral de cualquier pez cebra la cual
 ### Cita  ###
 Por favor si usted utiliza este programa citelo como sigue:
 
-Seco, J., Ñañez, N. & Pabon, D. AutoDanio. (2015). at <https://github.com/jjseco/AutoDanio>
+Seco, J. & Pabon, D. AutoDanio. (2015). at <https://github.com/jjseco/AutoDanio>
